@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f7f2" />
+    <title>On My Plate</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="logo">🍽️</div>
+        <div>
+          <h1>On My Plate</h1>
+          <p class="subtitle">Snap it. Name it. Save it.</p>
+        </div>
+      </header>
+      <section class="panel">
+        <h2>Add a meal</h2>
+        <p class="hint">Take a photo or choose one from your phone.</p>
+        <label class="upload" for="photo"
+          ><span id="uploadText">📷 &nbsp; Take or choose a photo</span
+          ><input
+            id="photo"
+            type="file"
+            accept="image/*"
+            capture="environment" /></label
+        ><img id="preview" alt="Your selected meal" hidden /><button
+          id="identify"
+          class="secondary"
+          disabled
+        >
+          ✨ Identify food with AI</button
+        ><label class="field" for="foodName"
+          >Food name <span>(you can edit this)</span></label
+        ><input
+          id="foodName"
+          type="text"
+          maxlength="100"
+          placeholder="e.g. Chicken and rice"
+          autocomplete="off"
+        /><button id="save" class="primary">Save meal</button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </section>
+      <section class="history">
+        <div class="history-head">
+          <h2>Meal history</h2>
+          <span id="count">0 meals</span>
+        </div>
+        <p id="empty" class="hint">
+          Nothing logged yet. Your meals will appear here.
+        </p>
+        <ul id="meals"></ul>
+        <p class="footnote">
+          Saved on this device only. Clearing browser data may erase your
+          history. AI may misidentify food; always check the result. Not for
+          insulin dosing.
+        </p>
+      </section>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
